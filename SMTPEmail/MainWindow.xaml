@@ -5,8 +5,67 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SMTPEmail"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="SMTP отправитель Email сообщения" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        
+        <StackPanel Height="400" Margin="10,10,0,0" VerticalAlignment="Top" Orientation="Horizontal" RenderTransformOrigin="0.491,0.497" HorizontalAlignment="Left" Width="382">
+            <Border BorderBrush="Black" BorderThickness="0" Width="405">
+                <StackPanel>
+                    <Border BorderBrush="Black" BorderThickness="0" Height="84">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="133*"/>
+                                <ColumnDefinition Width="272*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="Адрес получателя сообщения" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,0,0,0" Grid.ColumnSpan="2" />
+                            <TextBox Height="23" Margin="24,26,32,0" Name="MessageAddressTo" VerticalAlignment="Top" Text="linkin94lp@yandex.ru" Grid.ColumnSpan="2"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0" Height="84">
+                        <Grid>
+                            <Label Content="Адрес отправителя сообщения" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,0,0,0" />
+                            <TextBox Height="23" Margin="24,26,32,0" Name="MessageAddressFrom" VerticalAlignment="Top" Text="groupsib701o@yandex.ru"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0" Height="84">
+                        <Grid>
+                            <Label Content="Тема сообщения" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,0,0,0" />
+                            <TextBox Height="23" Margin="24,26,32,0" Name="MessageSubject" VerticalAlignment="Top" Text="TestSubjectTest"/>
+                        </Grid>
+                    </Border>
+                    <Border BorderBrush="Black" BorderThickness="0" Height="146">
+                        <Grid>
+                            <Label Content="Текст сообщения" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,0,0,0" />
+                            <TextBox Height="76" Margin="24,26,32,0" Name="MessageText" VerticalAlignment="Top" Text="Test Message Text line 1 &#x0a; Test Message Text line 2"/>
+                            <Button Content="Отправить" HorizontalAlignment="Left" Margin="291,116,0,0" VerticalAlignment="Top" Width="75" Click="SendMessage"/>
+                            <Button Content="Open Log Console" HorizontalAlignment="Left" Margin="10,121,0,0" VerticalAlignment="Top" Width="110" Click="buttonLogConsole_Click"/>
+                        </Grid>
+                    </Border>
+                </StackPanel>
+            </Border>
+        </StackPanel>
+        <StackPanel HorizontalAlignment="Left" Height="400" Margin="397,10,0,0" VerticalAlignment="Top" Width="387">
+            <Border BorderBrush="Black" BorderThickness="0" Height="100">
+                <Grid>
+                    <Label Content="Адрес сервера" Height="28" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="24,0,0,0" />
+                    <TextBox Name="ServerName" Height="20" Margin="24,26,64,0" VerticalAlignment="Top" Text="smtp.yandex.ru" />
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Height="100">
+                <Grid>
+                    <Label Content="Имя пользователя" Height="28" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="24,0,0,0" />
+                    <TextBox Name="UserName" Height="20" Margin="24,26,64,0" VerticalAlignment="Top" Text="groupsib701o@yandex.ru"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Height="100">
+                <Grid>
+                    <Label Content="Пароль (Пароль приложения)" Height="28" HorizontalAlignment="Left"  VerticalAlignment="Top" Margin="24,0,0,0" />
+                    <PasswordBox Name="UserPassword" Height="20" Margin="24,26,64,0" VerticalAlignment="Top" Password="sxfdoxpgizcxzmse"/>
+                </Grid>
+            </Border>
+            <Border BorderBrush="Black" BorderThickness="0" Height="100" Margin="0,0,63,0">
+                <Button Name="ButtonSaveSettings" Content="Сохранить настройки" Margin="103,10,93,66" Click="SaveSettings"/>
+            </Border>
+        </StackPanel>
+
     </Grid>
 </Window>
