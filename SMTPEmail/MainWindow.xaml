@@ -18,12 +18,14 @@
                             </Grid.ColumnDefinitions>
                             <Label Content="Адрес получателя сообщения" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,0,0,0" Grid.ColumnSpan="2" />
                             <TextBox Height="23" Margin="24,26,32,0" Name="MessageAddressTo" VerticalAlignment="Top" Text="linkin94lp@yandex.ru" Grid.ColumnSpan="2"/>
+                            <TextBox Name="NameFrom" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="120,54,0,0" TextWrapping="Wrap" Text="Dmitry" VerticalAlignment="Top" Width="120"/>
                         </Grid>
                     </Border>
                     <Border BorderBrush="Black" BorderThickness="0" Height="84">
                         <Grid>
                             <Label Content="Адрес отправителя сообщения" Height="28" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="24,0,0,0" />
                             <TextBox Height="23" Margin="24,26,32,0" Name="MessageAddressFrom" VerticalAlignment="Top" Text="groupsib701o@yandex.ru"/>
+                            <TextBox Name="NameTo" HorizontalAlignment="Left" Height="23" Margin="253,54,0,0" TextWrapping="Wrap" Text="Dmitry" VerticalAlignment="Top" Width="120"/>
                         </Grid>
                     </Border>
                     <Border BorderBrush="Black" BorderThickness="0" Height="84">

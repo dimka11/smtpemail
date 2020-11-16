@@ -39,8 +39,13 @@ namespace SMTPEmail
 
         public void SendMessage(object sender, RoutedEventArgs routedEventArgs)
         {
-            messageSender.message = new EmailMessage(MessageAddressFrom.Text,
-                MessageAddressFrom.Text, MessageSubject.Text, MessageSubject.Text);
+            messageSender.message = new EmailMessage(MessageAddressTo.Text,
+                MessageAddressFrom.Text, MessageSubject.Text, MessageText.Text);
+
+            messageSender.message.Date = GetDateTime();
+            messageSender.message.From = $"From: {NameFrom.Text} <{MessageAddressFrom.Text}>";
+            messageSender.message.To = $"To: {NameTo.Text} {MessageAddressTo.Text}";
+
             messageSender.Send();
         }
 
@@ -50,6 +55,12 @@ namespace SMTPEmail
 
 
             console.OutputBlock.Inlines.Add("Save Settings Button was clicked...\n");
+        }
+
+        public string GetDateTime()
+        {
+            DateTime localDate = DateTime.Now;
+            return $"Date: {localDate:ddd, dd MMM yyyy H:mm:ss zzz}";
         }
 
         public void StartLogConsole()
